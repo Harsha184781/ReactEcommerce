@@ -9,7 +9,7 @@
 .bor{
         background: white;
         width:100%;
-        border-top: none; 
+        border-top: none ; 
         border-left: none; 
         border-right: none; 
         box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3); 
@@ -35,3 +35,4 @@
     text-align:center;
 
 }
+

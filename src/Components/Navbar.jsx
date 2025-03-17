@@ -2,6 +2,7 @@ import React from 'react'
 import { FaUser } from 'react-icons/fa'
 import { IoCart } from 'react-icons/io5'
 import sty from "./mo.module.css"
+import { Link } from 'react-router-dom'
 
 
 const Navbar = () => {
@@ -14,12 +15,12 @@ const Navbar = () => {
                     <img className="mt-2" src="https://lms.achieversit.com/assets/images/logo.png" alt="" />
                 </li>
                <div className='d-flex me-5 pe-5'>
-                <li className="nav-item m-3 mt-4 me-5 pt-2 fs-5 fw-bold">
-                    <span aria-current="page" >Home</span>
-                </li>
-                <li className="nav-item m-3 mt-4  me-5 pt-2 fs-5 fw-bold">
+                <Link to="/" style={{textDecoration:"none",color:"black"}} className="nav-item m-3 mt-4 me-5 pt-2 fs-5 fw-bold">
+                   <span aria-current="page" >Home</span>
+                </Link>
+                <Link to="/productdetails/shop"  style={{textDecoration:"none",color:"black"}} className="nav-item m-3 mt-4  me-5 pt-2 fs-5 fw-bold">
                     <span>Shop</span>
-                </li>
+                </Link>
                 <li className="nav-item m-3 mt-4 me-5 pt-2 fs-5 fw-bold">
                     <span >Cart</span>
                 </li>

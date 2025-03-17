@@ -22,11 +22,12 @@ const Discount = () => {
                discountProducts.map((ele)=>(
                
                
-                 <Link to={`/productdetails/${ele.id}`}  key={ele.id} className="card col-lg-4  m-2 shadow-sm border-0" style={{width:"25vw",padding:"10px", textDecoration:"none"}} >
+              <div   key={ele.id} className="card col-lg-4  m-2 shadow-sm border-0" style={{width:"25vw",padding:"10px",}} >
+                <Link to={`/productdetails/${ele.id}`} style={{textDecoration:"none",color:"black"}}>
        <div style={{backgroundColor:"darkblue",color:"white",borderRadius:"18px",width:"78px",height:"34px",padding:"4px",textAlign:"center"}}>
         <p>{`${ele.discount}% Off`} </p>
         </div>             
-  <img style={{width:"22vw", height:"40vh"}} src={ele.imgUrl} className="card-img-top" alt="..."/>
+  <img style={{width:"22vw", height:"50vh"}} src={ele.imgUrl} className="card-img-top" alt="..."/>
   <div className="card-body">
     <h3 >{ele.productName}</h3>
    <div>
@@ -39,14 +40,16 @@ const Discount = () => {
     </div>
 <div className='d-flex justify-content-between'>
     <h3 className='p-2'>{`$ ${ele.price}`}</h3>
-     <button style={{border:"none", backgroundColor:"white", position:"absolute", left:"300px"}} onClick={notify}><CiCirclePlus style={{fontSize:"50px"}} /></button>
-           <ToastContainer />
+    
     </div>
 
 
    </div>
   </div>
-</Link>
+  </Link>
+  <button style={{ border: "none", backgroundColor: "white", position: "absolute", left: "300px" , bottom:"50px"}} onClick={notify}><CiCirclePlus style={{ fontSize: "50px" }} /></button>
+                    <ToastContainer />
+</div>
 
                ))
         }

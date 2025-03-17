@@ -3,7 +3,7 @@ import { IoBag } from 'react-icons/io5'
 
 const Foot = () => {
     return (
-        <div className='container-fluid' style={{ color:"white",backgroundColor: "darkblue" }}>
+        <div className='container-fluid' style={{color:"white",backgroundColor: "darkblue" }}>
              
                 <div className=' mt-5 pt-2 ms-5 d-flex'>
                 <h4 style={{marginLeft:"40px"}}  className='fw-bold mt-5 pt-2 ps-5'><span style={{position:"relative", bottom:"5px"}}><IoBag /></span>  Mart </h4>
@@ -13,7 +13,7 @@ const Foot = () => {
                    
                 </div>
 
-                <div className='d-flex'>
+                <div className='d-flex' style={{paddingBottom:"30px"}}>
                 <p style={{color:'grey',width:"200px",paddingTop:"10px", marginLeft:"135px"}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus enim tempora adipisci id error perferendis minus voluptatem, repudiandae commodi corporis eaque beatae facere itaque modi cum repellendus voluptates quidem at.</p>
 
                     <ul  style={{color:'grey', listStyleType:"none",marginLeft:"120px"}}>

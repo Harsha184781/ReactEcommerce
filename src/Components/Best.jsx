@@ -7,62 +7,69 @@ import { Link } from 'react-router-dom';
 
 const Best = () => {
 
-    const notify = () => toast.success("Product has been added to Cart");
+  const notify = () => toast.success("Product has been added to Cart");
 
-  const arr = [1,2,3,4,5]
- 
-     const[product,SetProduct]=useState([])
- 
-    
-       useEffect(()=>{
-      SetProduct( (products.filter(ele => ele.category=="sofa")));
-       },[])
-   
-    
- 
-   return (
-     <div className='bg-light'> 
-        <div className='pb-4'>
-            <div className=' pt-5'>
-                <h1 className='mt-5 text-center'>Best Sales</h1>
-            </div>
-    
-            <div className='container'>
-                <div className='row m-5'>
+  const arr = [1, 2, 3, 4, 5]
+
+  const [product, SetProduct] = useState([])
+
+
+  useEffect(() => {
+    SetProduct((products.filter(ele => ele.category == "sofa")));
+  }, [])
+
+
+
+  return (
+    <div className='bg-light'>
+      <div className='pb-4'>
+        <div className=' pt-5'>
+          <h1 className='mt-5 text-center'>Best Sales</h1>
+        </div>
+
+        <div className='container'>
+          <div className='row m-5'>
             {
-                   product.map((ele)=>(
-                    <Link to={`/productdetails/${ele.id}`} key={ele.id} className="card col-lg-4  m-2 shadow-sm border-0" style={{width:"25vw",padding:"10px"}} >
-                 
-      <img style={{width:"22vw", height:"40vh"}} src={ele.imgUrl} className="card-img-top" alt="..."/>
-      <div className="card-body">
-        <h3 >{ele.productName}</h3>
-       <div>
-        <div className="d-flex">
-        {
-          arr.map((ele)=>(
-           <p key={ele} className='ps-1' style={{color:"gold", fontSize:"20px"}}><FaStar/></p>
-          ))
-        }
-        </div>
-    <div className='d-flex justify-content-between'>
-        <h3 className='p-2'>{`$ ${ele.price}`}</h3>
-        
-        <button style={{border:"none", backgroundColor:"white", position:"absolute", left:"300px"}} onClick={notify}><CiCirclePlus style={{fontSize:"50px"}} /></button>
-        <ToastContainer />
-        </div>
-    
-    
-       </div>
-      </div>
-    </Link>
-    
-                   ))
+              product.map((ele) => (
+                <div key={ele.id} className="card col-lg-4  m-2 shadow-sm border-0" style={{width: "25vw", padding: "10px" }} >
+                  <Link to={`/productdetails/${ele.id}`} style={{textDecoration:"none"}}>
+                    <img style={{ width: "22vw", height: "50vh" }} src={ele.imgUrl} className="card-img-top" alt="..." />
+                    <div className="card-body">
+                      <h3 style={{color:"black"}}>{ele.productName}</h3>
+                      <div>
+                        <div className="d-flex">
+                          {
+                            arr.map((ele) => (
+                              <p key={ele} className='ps-1' style={{ color: "gold", fontSize: "20px" }}><FaStar /></p>
+                            ))
+                          }
+                        </div>
+                        <div className='d-flex justify-content-between'>
+                          <h3 style={{textDecoration:"none",color:"black"}} className='p-2'>{`$ ${ele.price}`}</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                  <button style={{ border: "none", backgroundColor: "white", position: "absolute", left: "300px" , bottom:"50px"}} onClick={notify}><CiCirclePlus style={{ fontSize: "50px" }} /></button>
+                  <ToastContainer />
+                </div>
+
+
+              ))
+
+
+
+
+
+
+
+
             }
-            </div>
-            </div>
+          </div>
         </div>
-        </div>
-   )
+      </div>
+    </div>
+  )
 }
 
 export default Best
