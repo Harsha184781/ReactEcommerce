@@ -5,6 +5,9 @@ import React, { useEffect, useState } from 'react'
 import { products } from '../products'
 import { ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import { add } from './CartSlice';
+import { useDispatch } from 'react-redux';
+
 
 const Newarrivals = () => {
   const arr = [1, 2, 3, 4, 5]
@@ -17,6 +20,13 @@ const Newarrivals = () => {
     SetProduct((products.filter(ele => ele.category == "mobile" || ele.category == "wireless")));
   }, [])
 
+  const dispatch = useDispatch()
+  
+  const addbtn = (ele)=>{
+    notify()
+    dispatch(add(ele))
+
+  }
 
 
   return (
@@ -53,7 +63,7 @@ const Newarrivals = () => {
                     
                   </div>
                 </Link>
-                <button style={{zIndex:"1" ,border: "none", backgroundColor: "white", position:"relative", bottom:"80px",left:"290px",width:"50px"}} onClick={notify}><CiCirclePlus style={{ fontSize: "50px" }} /></button>
+                <button style={{zIndex:"1" ,border: "none", backgroundColor: "white", position:"relative", bottom:"80px",left:"290px",width:"50px"}} onClick={()=>addbtn(ele)}><CiCirclePlus style={{ fontSize: "50px" }} /></button>
                 <ToastContainer />
                 </div>
                 

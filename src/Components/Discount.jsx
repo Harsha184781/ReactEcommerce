@@ -4,10 +4,18 @@ import { FaStar } from 'react-icons/fa'
 import { CiCirclePlus } from 'react-icons/ci'
 import { ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import { add } from './CartSlice';
+import { useDispatch } from 'react-redux';
 
 
 const Discount = () => {
+  const dispatch = useDispatch()
   const notify = () => toast.success("Product has been added to Cart");
+  const addbtn = (ele)=>{
+    notify()
+    dispatch(add(ele))
+
+  }
     const arr = [1,2,3,4,5]
   return (
     <div className='bg-light'> 
@@ -47,7 +55,7 @@ const Discount = () => {
    </div>
   </div>
   </Link>
-  <button style={{ border: "none", backgroundColor: "white", position: "absolute", left: "300px" , bottom:"50px"}} onClick={notify}><CiCirclePlus style={{ fontSize: "50px" }} /></button>
+  <button style={{ border: "none", backgroundColor: "white", position: "absolute", left: "300px" , bottom:"50px"}} onClick={()=>addbtn(ele)}><CiCirclePlus style={{ fontSize: "50px" }} /></button>
                     <ToastContainer />
 </div>
 

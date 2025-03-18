@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react'
 import { products } from '../products'
 import { ToastContainer, toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
+import { add } from './CartSlice';
+import { useDispatch } from 'react-redux';
 
 const Best = () => {
 
@@ -17,6 +19,13 @@ const Best = () => {
   useEffect(() => {
     SetProduct((products.filter(ele => ele.category == "sofa")));
   }, [])
+
+  const dispatch = useDispatch()
+    const addbtn = (ele)=>{
+      notify()
+      dispatch(add(ele))
+  
+    }
 
 
 
@@ -50,7 +59,7 @@ const Best = () => {
                       </div>
                     </div>
                   </Link>
-                  <button style={{ border: "none", backgroundColor: "white", position: "absolute", left: "300px" , bottom:"50px"}} onClick={notify}><CiCirclePlus style={{ fontSize: "50px" }} /></button>
+                  <button style={{ border: "none", backgroundColor: "white", position: "absolute", left: "300px" , bottom:"50px"}} onClick={()=>addbtn(ele)}><CiCirclePlus style={{ fontSize: "50px" }} /></button>
                   <ToastContainer />
                 </div>
 
