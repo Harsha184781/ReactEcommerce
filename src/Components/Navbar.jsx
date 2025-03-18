@@ -21,9 +21,9 @@ const Navbar = () => {
                 <Link to="/productdetails/shop"  style={{textDecoration:"none",color:"black"}} className="nav-item m-3 mt-4  me-5 pt-2 fs-5 fw-bold">
                     <span>Shop</span>
                 </Link>
-                <li className="nav-item m-3 mt-4 me-5 pt-2 fs-5 fw-bold">
+                <Link to="/product/cart" style={{textDecoration:"none",color:"black"}} className="nav-item m-3 mt-4 me-5 pt-2 fs-5 fw-bold">
                     <span >Cart</span>
-                </li>
+                </Link>
                
                 <li className="nav-item mt-4 m-3  pt-2 fs-5 ">
                     <FaUser />

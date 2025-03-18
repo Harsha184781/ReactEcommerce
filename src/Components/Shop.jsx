@@ -10,7 +10,7 @@ import { CiCirclePlus } from 'react-icons/ci'
 
 
 const Shop = () => { 
-  let [search,Setsearch] = useState("")
+  // let [search,Setsearch] = useState("")
   let [data,Setdata] = useState([])
   let [option,Setoption] = useState("")
  const notify = () => toast.success("Product has been added to Cart");
@@ -34,7 +34,7 @@ useEffect(()=>{
 
   const searchfun=(event)=>{
       const {value} = event.target
-      Setsearch(value)
+      // Setsearch(value)
       Setdata( products.filter((ele)=>ele.productName.toLowerCase().includes(value.toLowerCase())))
   }
 
@@ -65,8 +65,8 @@ useEffect(()=>{
 
 
                           <div className="dropdown col-3">
-  <button style={{backgroundColor:"darkblue",marginLeft:"25px"}} className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Filter By Catergory<span style={{paddingLeft:"25px"}}>|</span>
+  <button style={{backgroundColor:"darkblue",marginLeft:"25px",width:"200px",display: "flex", justifyContent: "space-between",  alignItems: "center",}} className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span style={{flex: 1, textAlign: "left"}}>{option==""? "Filter By Catergory" : option}</span> <span style={{flex: 1, textAlign: "right"}}>|</span>
   </button>
   <ul className="dropdown-menu">
     <li><button className="dropdown-item" type="button" onClick={()=>{handle("sofa")}}>Sofa</button></li>
