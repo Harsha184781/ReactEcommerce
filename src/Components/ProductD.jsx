@@ -8,10 +8,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import { CiCirclePlus } from "react-icons/ci";
 import { Link } from 'react-router-dom';
 import Foot from "./Foot";
-
+import { add } from './CartSlice';
+import { useDispatch } from 'react-redux';
 
 const ProductD = () => {
 
+    const dispatch = useDispatch()
     const notify = () => toast.success("Product has been added to Cart");
     const [product, SetProduct] = useState({})
     const [reviews, SetReview] = useState(0)
@@ -20,6 +22,13 @@ const ProductD = () => {
     const[Filtproducts,SetFiltproducts]=useState([])
 
     const { id } = useParams()
+  
+     
+      const addbtn = (ele)=>{
+        notify()
+        dispatch(add(ele))
+    
+      }
 
  
     useEffect(() => {
@@ -98,7 +107,8 @@ const ProductD = () => {
 
                  <input value={quantity} readOnly className=" mt-4 d-block" type="number" style={{height:"36px",width:"88px",borderRadius:"6px",borderWidth:"2px", paddingLeft:"14px"}}/>
 
-                 <button className="mt-4" style={{backgroundColor:"darkblue",color:"white", height:"50px",width:"120px",borderRadius:"6px",fontSize:"17px"}}>Add To Cart</button>
+                 <button className="mt-4" style={{backgroundColor:"darkblue",color:"white", height:"50px",width:"120px",borderRadius:"6px",fontSize:"17px"}} onClick={()=>addbtn(product)}>Add To Cart</button>
+                 <ToastContainer />
             </div>
             {
             reviews != 0 ?
@@ -148,7 +158,7 @@ const ProductD = () => {
        </div>
       </div>
       </Link>
-      <button style={{border:"none", backgroundColor:"white", position:"absolute", left:"300px",bottom:"40px"}} onClick={notify}><CiCirclePlus style={{fontSize:"50px"}} /></button>
+      <button style={{border:"none", backgroundColor:"white", position:"absolute", left:"300px",bottom:"40px"}} onClick={()=>addbtn(ele)}><CiCirclePlus style={{fontSize:"50px"}} /></button>
       <ToastContainer />
     </div>
     

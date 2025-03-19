@@ -6,11 +6,14 @@ import { products } from '../products'
 import { Link } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import { CiCirclePlus } from 'react-icons/ci'
+import { add } from './CartSlice';
+import { useDispatch } from 'react-redux';
 
 
 
 const Shop = () => { 
   // let [search,Setsearch] = useState("")
+  const dispatch = useDispatch()
   let [data,Setdata] = useState([])
   let [option,Setoption] = useState("")
  const notify = () => toast.success("Product has been added to Cart");
@@ -25,6 +28,14 @@ useEffect(()=>{
       console.log(data);
      }
 },[option])
+
+
+ 
+  const addbtn = (ele)=>{
+    notify()
+    dispatch(add(ele))
+
+  }
 
 
 
@@ -105,7 +116,7 @@ useEffect(()=>{
                       </div>
                     </div>
                   </Link>
-                  <button style={{ border: "none", backgroundColor: "white", position: "absolute", left: "300px" , bottom:"50px"}} onClick={notify}><CiCirclePlus style={{ fontSize: "50px" }} /></button>
+                  <button style={{ border: "none", backgroundColor: "white", position: "absolute", left: "300px" , bottom:"50px"}} onClick={()=>addbtn(ele)}><CiCirclePlus style={{ fontSize: "50px" }} /></button>
                   <ToastContainer />
                 </div>
 
