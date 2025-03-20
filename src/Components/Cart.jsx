@@ -1,20 +1,37 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import Foot from './Foot'
 import { useDispatch, useSelector } from 'react-redux'
 import { ImCross } from 'react-icons/im'
 import { FaMinus, FaPlus } from 'react-icons/fa'
-import { add } from './CartSlice'
+import { add, deletee, remove,} from './CartSlice'
 
 
 const Cart = () => {
+    const [price,Setprice] = useState(0)
 
     const data = useSelector(data => data.cart)
     const dispatch = useDispatch()
+  
+      const addbtn = (ele)=>{
+            dispatch(add(ele))
+          }
 
-    
+     const remobtn = (ele)=>{
+            dispatch(remove(ele))
+     }
+     const delebtn = (ele)=>{
+        dispatch(deletee(ele))
+ }
        
-    
+useEffect(()=>{
+  const pric = data.reduce((acc,ele)=>{
+    return(acc+(ele.price*ele.quantity))
+  },0)
+  console.log(pric)
+  Setprice(pric)
+
+},[data])
 
 
     return (
@@ -41,10 +58,10 @@ const Cart = () => {
                                         </div>
 
                                         <div style={{ marginLeft: "150px" }}>
-                                            <ImCross style={{ fontSize: "20px",position:"relative",left:"4vw",cursor:"pointer"}} />
+                                            <ImCross onClick={()=>delebtn(ele)} style={{ fontSize: "20px",position:"relative",left:"4vw",cursor:"pointer"}} />
                                             <div className='d-flex' style={{ marginTop: "11vh" }}>
-                                                <div onClick={ ()=>dispatch(add)} style={{cursor:"pointer", border:"2px solid", borderColor:"#ebe8e8"}}><FaPlus style={{ fontSize: "20px", margin: "10px",}} /></div>
-                                                <div style={{ cursor:"pointer",backgroundColor:"#ebe8e8", marginLeft:"4px"}}> <FaMinus style={{ fontSize: "20px", margin: "10px" ,marginTop:"12px" }} /></div>
+                                                <div onClick={ ()=>addbtn(ele)} style={{cursor:"pointer", border:"2px solid", borderColor:"#ebe8e8"}}><FaPlus style={{ fontSize: "20px", margin: "10px",}} /></div>
+                                                <div onClick={ ()=>remobtn(ele)}style={{ cursor:"pointer",backgroundColor:"#ebe8e8", marginLeft:"4px"}}> <FaMinus style={{ fontSize: "20px", margin: "10px" ,marginTop:"12px" }} /></div>
                                             </div>
                                         </div>
                                     </div>
@@ -63,8 +80,8 @@ const Cart = () => {
                         <div className=' bg-white p-4 mt-5 ' style={{ width: "25vw", borderRadius: "5px", height: "22vh" }}>
                             <h5>Cart Summary</h5>
                             <hr style={{ color: "grey", borderWidth: "1px" }} />
-                            <p>Total Price</p>
-                            <h5>$0.00</h5>
+                            <p>Total Price :</p>
+                            <h5>${price}.00</h5>
                         </div>
                     </div>
 

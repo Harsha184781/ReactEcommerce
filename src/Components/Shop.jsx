@@ -4,7 +4,7 @@ import table from "../assets/Images/table.jpg"
 import { FaSearch, FaStar } from 'react-icons/fa'
 import { products } from '../products'
 import { Link } from 'react-router-dom'
-import { ToastContainer } from 'react-toastify'
+import { ToastContainer,toast } from 'react-toastify'
 import { CiCirclePlus } from 'react-icons/ci'
 import { add } from './CartSlice';
 import { useDispatch } from 'react-redux';

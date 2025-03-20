@@ -3,9 +3,14 @@ import { FaUser } from 'react-icons/fa'
 import { IoCart } from 'react-icons/io5'
 import sty from "./mo.module.css"
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 
 const Navbar = () => {
+  
+  const data = useSelector((ele)=>ele.cart)
+
+
   return (
     <>
 
@@ -28,9 +33,10 @@ const Navbar = () => {
                 <li className="nav-item mt-4 m-3  pt-2 fs-5 ">
                     <FaUser />
                 </li>
-                <li className="nav-item mt-4  pt-2 fs-5 ">
+                <Link to="/product/cart" style={{textDecoration:"none",color:"black"}} className="nav-item mt-4  pt-2 fs-5 ">
                     <IoCart/>
-                </li>
+                    <p style={{backgroundColor:"darkblue",borderRadius:"50%", color:"white",fontSize:"10px",textAlign:"center",width:"15px",position:"relative",bottom:"30px",left:"8px"}}>{data.length}</p>
+                </Link>
                 </div>
             </ul>
         </div>
