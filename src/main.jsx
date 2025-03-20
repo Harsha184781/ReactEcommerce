@@ -8,7 +8,9 @@ import Store from './Components/Store.js'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 
-
+//Here i am wraping the main app component in Provider for accessing the store using useSelector and i am wrapping the 
+// component in browserRouter for routing to get work, and in provider i am providing the value for store as Store
+// dynamically
 
 
 
