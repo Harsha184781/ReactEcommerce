@@ -7,6 +7,10 @@ import { FaMinus, FaPlus } from 'react-icons/fa'
 import { add, deletee, remove,} from './CartSlice'
 
 
+// this the main cart page in whole project, this project having many methods getting from slice by importing
+// this componet have total amount calculating , quantity increase and decrease. we got the add,deletee,remove from cartslice there we exporting cartslice//cartslice.
+// cartslice.actions and cartslice.reducer by default.
+
 const Cart = () => {
     const [price,Setprice] = useState(0)
 
