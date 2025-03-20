@@ -8,6 +8,9 @@ import { add } from './CartSlice';
 import { useDispatch } from 'react-redux';
 
 
+//this is the discountcomponent, component is basically ssimilar to new arrivals but the data present is imported from 
+// discount products
+
 const Discount = () => {
   const dispatch = useDispatch()
   const notify = () => toast.success("Product has been added to Cart");

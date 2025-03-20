@@ -1,6 +1,9 @@
 import React from 'react'
 import { IoBag } from 'react-icons/io5'
 
+//this the footer component this component is used for all pages by importing this component in the components wherever we want
+// this footer component is static component.
+
 const Foot = () => {
     return (
         <div className='container-fluid' style={{color:"white",backgroundColor: "darkblue" }}>

@@ -8,6 +8,9 @@ import { Link } from 'react-router-dom';
 import { add } from './CartSlice';
 import { useDispatch } from 'react-redux';
 
+// this is the new arrvials component this is part of homepage so this component contains of the data which 
+// which is filter by mobile or wireless category.Cards have the things + button if u are going to click th ebutton its 
+// going to add the button in cart.
 
 const Newarrivals = () => {
   const arr = [1, 2, 3, 4, 5]
