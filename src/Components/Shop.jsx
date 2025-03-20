@@ -8,11 +8,16 @@ import { ToastContainer,toast } from 'react-toastify'
 import { CiCirclePlus } from 'react-icons/ci'
 import { add } from './CartSlice';
 import { useDispatch } from 'react-redux';
-
+ 
+// This the shop page so this shop having some functions basically there are two one is dropdown list ,
+// and another is search so when we going to enter the thing so by using then name key in object its going to 
+// filter and rendering into page, and dropdown list in that basically while the selecting the option
+// we are getting the option on click we going to update the state that is created by the state its going to filter 
+// rendering into the page.
 
 
 const Shop = () => { 
-  // let [search,Setsearch] = useState("")
+ 
   const dispatch = useDispatch()
   let [data,Setdata] = useState([])
   let [option,Setoption] = useState("")
@@ -21,11 +26,11 @@ const Shop = () => {
 useEffect(()=>{
      if(option===""){
       Setdata(products)
-      console.log(data);
+      
      }
      else{
       Setdata(products.filter((ele)=>ele.category===option))
-      console.log(data);
+      
      }
 },[option])
 
@@ -45,7 +50,7 @@ useEffect(()=>{
 
   const searchfun=(event)=>{
       const {value} = event.target
-      // Setsearch(value)
+      
       Setdata( products.filter((ele)=>ele.productName.toLowerCase().includes(value.toLowerCase())))
   }
 

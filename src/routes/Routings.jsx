@@ -5,6 +5,10 @@ import ProductD from '../Components/ProductD'
 import Shop from '../Components/Shop'
 import Cart from '../Components/Cart'
 
+
+// this is the routing page where we mentioned the things giving path and element dynamically for navigating with path 
+// andd with particular component.
+
 const Routings = () => {
   return (
     <Routes>
