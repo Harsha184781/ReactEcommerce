@@ -68,7 +68,7 @@ const ProductD = () => {
             <div
                 style={{
                     position: "absolute",
-                    top: 110,
+                    top: 100,
                     left: 0,
                     width: "100%",
                     height: "40vh",
