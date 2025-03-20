@@ -5,6 +5,12 @@ import "slick-carousel/slick/slick-theme.css";
 import { SliderData } from '../products';
 import sty from "./mo.module.css"
 
+
+//this is the reactSlick component so here we are getting reactslick from importing Slider and css from module.css
+//i imported cssslick.
+
+
+
 const Reactslick = () => {
     var settings = {
         autoplay:true,

@@ -11,6 +11,13 @@ import Foot from "./Foot";
 import { add } from './CartSlice';
 import { useDispatch } from 'react-redux';
 
+
+
+//This is the product details page,i got the data from products and i got the id by passing in the file path after using params i am geting 
+// the id so by using id we are filtering the data and by the data of object we are making it rendering dynamically 
+// i having description adn reviews so these are got from object of data, and u may like i created by filtering based on category
+
+
 const ProductD = () => {
 
     const dispatch = useDispatch()
@@ -30,7 +37,7 @@ const ProductD = () => {
     
       }
 
-      
+
     useEffect(() => {
        window.scrollTo(0, 0);
         const [prod] = products.filter(ele => ele.id == id)
