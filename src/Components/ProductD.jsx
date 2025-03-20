@@ -25,7 +25,7 @@ const ProductD = () => {
     const [product, SetProduct] = useState({})
     const [reviews, SetReview] = useState(0)
     const [matter,Setmatter]=useState("desc")
-    const [quantity,Setquantity] = useState(0)
+    const [quantity,Setquantity] = useState(1)
     const[Filtproducts,SetFiltproducts]=useState([])
 
     const { id } = useParams()
@@ -68,7 +68,7 @@ const ProductD = () => {
             <div
                 style={{
                     position: "absolute",
-                    top: 100,
+                    top: 110,
                     left: 0,
                     width: "100%",
                     height: "40vh",

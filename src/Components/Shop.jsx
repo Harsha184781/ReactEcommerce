@@ -64,7 +64,7 @@ useEffect(()=>{
                   <div
                       style={{
                           position: "absolute",
-                          top: 100,
+                          top: 110,
                           left: 0,
                           width: "100%",
                           height: "40vh",

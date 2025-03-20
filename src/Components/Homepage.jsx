@@ -12,7 +12,7 @@ import Routings from '../routes/Routings'
 const Homepage = () => {
   return (
     <div>
- <Navbar/>
+    <  Navbar />
     <div className='bg-light'>
     <div className='container '>
     <Reactslick/>
