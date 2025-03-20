@@ -4,6 +4,8 @@ import { FaCar, FaHeadphones } from 'react-icons/fa'
 import { BsCreditCardFill } from 'react-icons/bs'
 import { GiLayeredArmor } from 'react-icons/gi'
 import { serviceData } from '../products'
+ 
+// this the component in homepage and describing about page. the data is imported from product.jsx
 
 
 const Cards = () => {
