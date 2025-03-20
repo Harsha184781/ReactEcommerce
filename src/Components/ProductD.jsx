@@ -30,7 +30,7 @@ const ProductD = () => {
     
       }
 
- 
+      
     useEffect(() => {
        window.scrollTo(0, 0);
         const [prod] = products.filter(ele => ele.id == id)

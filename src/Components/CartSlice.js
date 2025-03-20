@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
+// so this is the cart slice in this we are having name,initial state,reducers so in reducers we are having methods and this methods helps us to modify the initial state, and methods having parameters are two state,action 
+// we are getting the thing where we passed aruguments for methods in action.payload
+
 const cartslice = createSlice({
     name :"cart",
     initialState:[],
